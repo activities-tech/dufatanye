@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DUFATANYE Mosque - Serving the Muslim community with daily prayers, Quran classes, and Islamic education">
+    <meta name="author" content="DUFATANYE Mosque Team">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----Favicon--------->
+    <link rel="icon" sizes="192x192"  href="logo/4.png" >
+    <link rel="icon" type="image/png" href="logo/4.png">
+  
+    <!-- Apple Touch Icon (for iOS devices) -->
+    <link rel="apple-touch-icon" href="logo/4.png">
+    
+    <!-- Chrome Android -->
+    <link rel="icon" sizes="192x192" href="logo/4.png">
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:image" content="https://yourwebsite.com/path/to/logo/4.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:image" content="https://yourwebsite.com/path/to/logo/4.png">
+
+    
+    <!----Favicon--------->
+
+
+    <meta name="keywords" content="mosque, islam, prayer times, quran, muslim community">
+    <title>DUFATANYE Mosque | Community & Prayer Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.php">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="new.html">
+    <link rel="stylesheet" href="new.css">
+   
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Initialize with localStorage or default to English
+    let currentLang = localStorage.getItem('mosqueLang') || 'en';
+    
+    // Update ALL elements with data-translate attributes
+    function updateTranslations(lang) {
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            if (translations[lang]?.[key]) {
+                el.textContent = translations[lang][key];
+                // Special RTL handling for Arabic
+                if (lang === 'ar') {
+                    el.closest('section,article,div').style.direction = 'rtl';
+                    el.closest('section,article,div').style.textAlign = 'right';
+                }
+            }
+        });
+        
+        // Update language switcher UI
+        document.getElementById('selected-language').querySelector('span').textContent = 
+            {en:'English', fr:'Français', ar:'العربية', nl:'Nederlands', rw:'Kinyarwanda'}[lang];
+        
+        // Set active button
+        document.querySelectorAll('.language-dropdown button').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        
+        // Save preference
+        localStorage.setItem('mosqueLang', lang);
+    }
+
+    // Initialize on load
+    updateTranslations(currentLang);
+
+    // Handle language selection
+    document.querySelectorAll('.language-dropdown button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentLang = btn.getAttribute('data-lang');
+            updateTranslations(currentLang);
+        });
+    });
+});
+    </script>
+</head>
+<body>
+
+
+  <header>
+
+  <!-----notification----->
+
+  <div class="mosque-notification-bar fullwidth-mobile" >
+    <div class="notification-content">
+      <span class="mosque-icon">🕌</span>
+      <span class="message">✨ Eid Mubarak! May Allah’s blessings be with you.</span>
+      <span>|</span>
+      <span class="message">📖 Discover Surahs – Read & Reflect</span>
+      <span>|</span>
+      
+      <span class="mosque-icon" fullwidth-mobile>🕌</span>
+      <span>|</span>
+      <span class="message">🕋 Prayer Times – Stay Connected to Salah</span>
+      <span>|</span>
+      <span class="mosque-icon">🕌</span>
+      <span class="mosque-icon">🕌</span>
+      <span class="message">📜 **Ayat-ul-Kursi:**  
+      اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ ... وَهُوَ الْعَلِيُّ الْعَظِيمُ |  
+      **Allah! There is no deity except Him, the Ever-Living, the Sustainer of all existence... And He is the Most High, the Most Great.** (Surah Al-Baqarah 2:255) |  
+      **Imana! Nta wundi usengwa uretse We, We ubaho iteka, utunze byose... Kandi We ni We Mutegetsi ukomeye.** (Al-Baqarah 2:255)  
+      </span>
+      <span>|</span>
+    
+      <span class="mosque-icon">🕌</span>
+      <span class="message">🤲 Support the Masjid – Give for a Blessed Cause</span>
+    </div>
+    <button class="close-btn">&times;</button>
+  </div>
+
+  <!-----end of notification-->
+    <!-- Header with Navigation -->
+    <div class="container header-container">
+      <div class="logo">
+          <h1 data-translate="site-title">DUFATANYE Markaz</h1>
+          <p data-translate="site-subtitle">Center for Peace and Guidance</p>
+      </div>
+      
+      <!-- Language Switcher -->
+       <!--  <div class="language-switcher">
+          <div class="selected-language" id="selected-language">
+              <i class="fas fa-globe"></i>
+              <span>English</span>
+              <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="language-dropdown">
+              <button data-lang="en" class="active">
+                  <span class="flag-icon">🇬🇧</span> English
+              </button>
+              <button data-lang="fr">
+                  <span class="flag-icon">🇫🇷</span> Français
+              </button>
+              <button data-lang="ar" dir="rtl">
+                  <span class="flag-icon">🇸🇦</span> العربية
+              </button>
+              <button data-lang="nl"> --> <!-- Changed from ur to nl -->
+              <!--<span class="flag-icon">🇳🇱</span> Nederlands
+              </button> -->
+             <!-- <button data-lang="rw">
+                  <span class="flag-icon">🇷🇼</span> Kinyarwanda
+              </button>
+            </div>
+      </div> -->
+              
+      <div class="header-container">
+        <div class="logo">
+            <!-- Your logo content here -->
+        </div>
+
+        <!-- Single Navigation Menu -->
+        <nav>
+            <!-- Desktop Navigation (visible by default) -->
+            <ul class="desktop-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#prayer-times">Prayer Times</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button (hidden on desktop) -->
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+            
+
+
+
+
+
+            <!--"mosque-notification"--->
+            <!----  <div class="mosque-notification">
+        <div class="prayer-time">
+            <span>⏳</span>
+            <span id="next-prayer">Next: Dhuhr in 1h 22m</span>
+        </div>
+        <div class="prayer-time current-prayer" id="current-prayer-display">
+            <span>🕌</span>
+            <span>Current: <span class="highlight" id="current-prayer-name">Fajr</span></span>
+        </div>
+    </div>--> 
+
+
+
+
+            <!--"mosque-notification"--->
+
+    </header>
+
+
+
+
+
+
+    
+    <!-- Hero Section -->
+
+    <section id="home" class="hero fullwidth-moblie">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Welcome to DUFATANYE MARKAZ</h2>
+                <p>A place of worship, learning, and community</p>
+                <a href="#prayer-times" class="btn">View Prayer Times</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Our Mosque</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>DUFATANYE MARKAZ came to life in 2015 to serve the growing Rwandan Muslim community, and Muslims worldwide. Our mission is to provide a welcoming space for worship, education, and community building.</p>  
+                    <p>We offer daily prayers, Friday Jumu'ah services, Quran classes for all ages, and various community programs throughout the year.</p> 
+                    <p>Join us in our mission to foster a strong, united community based on the principles of Islam.</p> 
+                    <p>We are located at Rue van Lint 53, 1070 Anderlecht, Brussels.</p>
+
+
+                    <a href="#services" class="btn">Our Services</a>
+                    <a href="#contact" class="btn">Location</a>
+                </div>
+                <div class="about-image">
+                    <img src="mosque.avif" alt="Mosque interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Times Section -->
+    <section id="prayer-times" class="prayer-times">
+        <div class="container">
+            <h2 class="section-title">Prayer Times</h2>
+            <div class="prayer-times-container">
+                <div class="prayer-times-calendar">
+                    <h3>Today's Prayer Times</h3>
+                    <div class="prayer-times-list" id="prayer-times-list">
+                        <!-- Filled by JavaScript -->
+                    </div>
+                    <div class="current-time">
+                        <p id="current-time"></p>
+                        <p id="next-prayer"></p>
+                    </div>
+                </div>
+                <div class="monthly-calendar">
+                    <h3>Monthly Prayer Times</h3>
+                    <!----<iframe src="https://calendar.google.com/calendar/embed?src=mosque%40gmail.com" 
+                    style="border: 0" width="800" height="600"></iframe>---->
+                    <div class="calendar-nav">
+                        <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                        <h4 id="current-month">January 2023</h4>
+                        <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid">
+                        <!-- Filled by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <h3>Daily Prayers</h3>
+                    <p>All five daily prayers held in congregation with Imam leadership.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book-quran"></i>
+                    </div>
+                    <h3>Quran Classes</h3>
+                    <p>Classes for children and adults to learn Quran recitation and memorization.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Islamic Education</h3>
+                    <p>Courses on Islamic studies, Arabic language, and Seerah.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community Services</h3>
+                    <p>Food drives, counseling, and social services for those in need.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="imam-profile" class="imam-profile-section">
+        <div class="container">
+          <h2 class="section-title">Weekly Khutbah</h2>
+          
+          <div class="imam-profiles">
+            <!-- First Imam -->
+            <div class="imam-profile">
+              <div class="imam-image">
+                <img src="menk/img/utuba.jpg" alt="Imam Abdullah" loading="lazy">
+              </div>
+              <div class="imam-details">
+                <h3>Mufti Ismail ibn Musa Menk</h3>
+                <div class="sermon-audio">
+                  <audio controls>
+                    <source src="menk/aud/juma.jpg!w700wp" type="audio/mpeg">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/s5b4aqEVncI?si=HBQkIHsfedqRChhX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    Your browser does not support audio element.
+                  </audio>
+                </div>
+                <a href="sermons.html" class="btn">
+                  <i class="fas fa-list"></i> View All Sermons
+                </a>
+              </div>
+            </div>
+        <!------Second Imam--->
+            <div class="imam-profile">
+                <div class="imam-image">
+                  <img src="sindayigaya/img/mufit.jpg" alt="SHEIKH Musa Sindayigaya" loading="lazy">
+                </div>
+                <div class="imam-details">
+                  <h3>Mufti SHEIKH Musa Sindayigaya</h3>
+                  <p style="text-transform: lowercase;">TUBE ABAISLAMU BAKORERA KU IGENA MIGAMBI MUFT SHEIKH MUSA SINDAYIGAYA</p>
+                  <div class="sermon-audio">
+                    <audio controls>
+                      <source src="sindayigaya/aud/KHUTUBA_ TUBE ABAISLAMU BAKORERA KU IGENA MIGAMBI MUFT SHEIKH MUSA SINDAYIGAYA.mp3" type="audio/mpeg">
+                      Your browser does not support audio element.
+                    </audio>
+                  </div>
+                  <a href="sermons.html" class="btn">
+                    <i class="fas fa-list"></i> View All Sermons
+                  </a>
+                </div>
+              </div>
+            <!-- Third Imam -->
+            <div class="imam-profile">
+              <div class="imam-image">
+                <img src="mufti/img/sheh.jpg" alt="Imam Muhammad" loading="lazy">
+              </div>
+              <div class="imam-details">
+                <h3>SHEIKH Salim Hitimana</h3>
+                <p>KWIGIRA </p>
+                <div class="sermon-audio">
+                  <audio controls>
+                    <source src="mufti/aud/KWIGIRA By Hon. Mufti of Rwanda Sheikh HITIMANA Salim.mp3" type="audio/mpeg">
+                    Your browser does not support audio element.
+                  </audio>
+                </div>
+                <a href="sermons.html" class="btn">
+                  <i class="fas fa-list"></i> View All Sermons
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-list">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="quarn.jpg" alt="Quran Competition" loading="lazy">
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>June 15, 2025 • 5:00 PM</span>
+                        </div>
+                        <h3 class="event-title">Annual Quran Competition</h3>
+                        <p class="event-description">Join us for our yearly Quran recitation competition with prizes for all age groups.</p>
+                        <a href="#contact" class="btn btn-event">
+                            <i class="fas fa-user-plus"></i> Register
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="religion-ramadan-emirates-iftar.webp" alt="Charity Dinner" loading="lazy">
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>June 22, 2025 • 7:30 PM</span>
+                        </div>
+                        <h3 class="event-title">Charity Iftar Dinner</h3>
+                        <p class="event-description">Fundraising dinner to support local families in need during Ramadan.</p>
+                        <a href="#contact" class="btn btn-event">
+                            <i class="fas fa-user-plus"></i> Register
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="financial.webp" alt="Islamic Lecture" loading="lazy">
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>July 5, 20245 • 6:00 PM</span>
+                        </div>
+                        <h3 class="event-title">Islamic Finance Workshop</h3>
+                        <p class="event-description">Learn about halal investment strategies and ethical banking alternatives.</p>
+                        <a href="#contact" class="btn btn-event">
+                            <i class="fas fa-user-plus"></i> Register
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- PayPal/Stripe buttons would go here -->
+
+   <!-- AFTER PRAYER TIMES SECTION -->
+<section id="donate" class="donate">
+    <div class="container">
+        <h2 class="section-title">Support Our Mosque</h2>
+        <div class="donation-options">
+            <button data-amount="10">€10</button>
+            <button data-amount="20">€20</button>
+            <button data-amount="50">€50</button>
+            <input type="number" id="custom-amount" placeholder="Other Amount">
+            <button id="donate-btn" class="btn">Donate Now</button>
+        </div>
+    </div>
+</section>
+      <!-- PayPal/Stripe buttons would go here -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Visit Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rue van Lint 53, 1070 Anderlecht</p>
+                    <p><i class="fas fa-phone"></i> +32 486 92 69 88</p>
+                    <p><i class="fas fa-envelope"></i> dufatanyeasbl@gmail.com</p>
+                    
+                    <h3>Prayer Times Hotline</h3>
+                    <p><i class="fas fa-phone"></i> +32 488 81 61 41</p>
+                    
+                    <h3>Office Hours</h3>
+                    <p>Monday-Friday: 9:00 AM - 8:00 PM</p>
+                    <p>Weekends: 10:00 AM - 9:00 PM</p>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="quran-players">
+        <div class="container">
+          <h2 class="section-title">Quran Recitations</h2>
+          <div class="player-grid">
+            <!-- Player 1 -->
+            <div class="player-container">
+              <iframe style="border-radius:12px" 
+                      src="https://open.spotify.com/embed/episode/148FRHwD3XXXTolqNYhKWV?utm_source=generator&theme=0&t=0" 
+                      width="100%" 
+                      height="152" 
+                      frameborder="0" 
+                      allowfullscreen="" 
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                      loading="lazy"></iframe>
+              <p class="player-title">Surah Al-Fatihah</p>
+            </div>
+            
+            <!-- Player 2 -->
+            <div class="player-container">
+              <iframe style="border-radius:12px" 
+                      src="https://open.spotify.com/embed/show/6yF6BGyHlSO0qbd3BssjGr?utm_source=generator" 
+                      width="100%" 
+                      height="152" 
+                      frameborder="0" 
+                      allowfullscreen="" 
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                      loading="lazy"></iframe>
+              <p class="player-title">Daily Quran Podcast</p>
+            </div>
+            <!-- Player 3 -->
+      <div class="player-container">
+        <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/5ns8RH2AN0i1YynqKImMWb?utm_source=generator" 
+                width="100%" 
+                height="152" 
+                frameborder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"></iframe>
+        <p class="player-title">Surah Yasin</p>
+      </div>
+            
+            <!-- Player 3 -->
+            
+            <div class="player-container">
+              <iframe style="border-radius:12px" 
+                      src="https://open.spotify.com/embed/track/7ntQthHepFOQUaMH37VqTV?utm_source=generator" 
+                      width="100%" 
+                      height="152" 
+                      frameborder="0" 
+                      allowfullscreen="" 
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                      loading="lazy"></iframe>
+              <p class="player-title">Surah Ar-Rahman</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- Subscription Section -->
+<section id="subscribe" class="subscribe">
+    <div class="container">
+        <div class="subscribe-container">
+            <div class="subscribe-text">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to receive prayer time updates, event announcements, and community news.</p>
+            </div>
+            <form id="subscribeForm" class="subscribe-form">
+                <div class="form-group">
+                    <input type="email" id="subscriber-email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </div>
+                <p class="disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Then continue with your existing contact section -->
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DUFATANYE Markaz</h3>
+                    <p>A center for worship, education, and community service.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#prayer-times">Prayer Times</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="footer-bottom fullwidth-mobile">
+                <p>&copy; 2025 DUFATANYE MARKAZ. All Rights Reserved.KATE</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

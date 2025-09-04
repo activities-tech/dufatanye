@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DUFATANYE Mosque - Serving the Muslim community with daily prayers, Quran classes, and Islamic education">
+    <meta name="author" content="DUFATANYE Mosque Team">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <!----Favicon--------->
+    <link rel="icon" sizes="192x192"  href="logo/4.png" >
+    <link rel="icon" type="image/png" href="logo/4.png">
+  
+    <!-- Apple Touch Icon (for iOS devices) -->
+    <link rel="apple-touch-icon" href="logo/4.png">
+    
+    <!-- Chrome Android -->
+    <link rel="icon" sizes="192x192" href="logo/4.png">
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:image" content="https://yourwebsite.com/path/to/logo/4.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:image" content="https://yourwebsite.com/path/to/logo/4.png">
+
+    
+    <!----Favicon--------->
+
+
+    <meta name="keywords" content="mosque, islam, prayer times, quran, muslim community">
+    <title>DUFATANYE Mosque | Community & Prayer Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.php">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="new.html">
+   
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Initialize with localStorage or default to English
+    let currentLang = localStorage.getItem('mosqueLang') || 'en';
+    
+    // Update ALL elements with data-translate attributes
+    function updateTranslations(lang) {
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            if (translations[lang]?.[key]) {
+                el.textContent = translations[lang][key];
+                // Special RTL handling for Arabic
+                if (lang === 'ar') {
+                    el.closest('section,article,div').style.direction = 'rtl';
+                    el.closest('section,article,div').style.textAlign = 'right';
+                }
+            }
+        });
+        
+        // Update language switcher UI
+        document.getElementById('selected-language').querySelector('span').textContent = 
+            {en:'English', fr:'Français', ar:'العربية', nl:'Nederlands', rw:'Kinyarwanda'}[lang];
+        
+        // Set active button
+        document.querySelectorAll('.language-dropdown button').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        
+        // Save preference
+        localStorage.setItem('mosqueLang', lang);
+    }
+
+    // Initialize on load
+    updateTranslations(currentLang);
+
+    // Handle language selection
+    document.querySelectorAll('.language-dropdown button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentLang = btn.getAttribute('data-lang');
+            updateTranslations(currentLang);
+        });
+    });
+});
+    </script>
+</head>
+<body>
+  <header>
+
+  <!-----notification----->
+
+  <div class="mosque-notification-bar">
+    <div class="notification-content">
+      <span class="mosque-icon">🕌</span>
+      <span class="message">✨ Eid Mubarak! May Allah’s blessings be with you.</span>
+      <span>|</span>
+      <span class="message">📖 Discover Surahs – Read & Reflect</span>
+      <span>|</span>
+      
+      <span class="mosque-icon">🕌</span>
+      <span>|</span>
+      <span class="message">🕋 Prayer Times – Stay Connected to Salah</span>
+      <span>|</span>
+      <span class="mosque-icon">🕌</span>
+      <span class="mosque-icon">🕌</span>
+      <span class="message">📜 **Ayat-ul-Kursi:**  
+      اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ ... وَهُوَ الْعَلِيُّ الْعَظِيمُ |  
+      **Allah! There is no deity except Him, the Ever-Living, the Sustainer of all existence... And He is the Most High, the Most Great.** (Surah Al-Baqarah 2:255) |  
+      **Imana! Nta wundi usengwa uretse We, We ubaho iteka, utunze byose... Kandi We ni We Mutegetsi ukomeye.** (Al-Baqarah 2:255)  
+      </span>
+      <span>|</span>
+    
+      <span class="mosque-icon">🕌</span>
+      <span class="message">🤲 Support the Masjid – Give for a Blessed Cause</span>
+    </div>
+    <button class="close-btn">&times;</button>
+  </div>
+
+  <!-----end of notification-->
+    <!-- Header with Navigation -->
+    <div class="container header-container">
+      <div class="logo">
+          <h1 data-translate="site-title">DUFATANYE Markaz</h1>
+          <p data-translate="site-subtitle">Center for Peace and Guidance</p>
+      </div>
+      
+      <!-- Language Switcher -->
+       <!--  <div class="language-switcher">
+          <div class="selected-language" id="selected-language">
+              <i class="fas fa-globe"></i>
+              <span>English</span>
+              <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="language-dropdown">
+              <button data-lang="en" class="active">
+                  <span class="flag-icon">🇬🇧</span> English
+              </button>
+              <button data-lang="fr">
+                  <span class="flag-icon">🇫🇷</span> Français
+              </button>
+              <button data-lang="ar" dir="rtl">
+                  <span class="flag-icon">🇸🇦</span> العربية
+              </button>
+              <button data-lang="nl"> --> <!-- Changed from ur to nl -->
+              <!--<span class="flag-icon">🇳🇱</span> Nederlands
+              </button> -->
+             <!-- <button data-lang="rw">
+                  <span class="flag-icon">🇷🇼</span> Kinyarwanda
+              </button>
+            </div>
+      </div> -->
+              
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#prayer-times">Prayer Times</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="new.html">News</a></li>
+                    
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        
+        </div>
+    </header>
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Islamic Insights & Articles</h2>
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog-ramadan.jpg" alt="Preparing for Ramadan" loading="lazy">
+                        <div class="blog-date">
+                            <span class="day">15</span>
+                            <span class="month">Mar</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Sheikh Abdullah</span>
+                            <span><i class="fas fa-tag"></i> Ramadan</span>
+                        </div>
+                        <h3 class="blog-title">10 Ways to Prepare Spiritually for Ramadan</h3>
+                        <p class="blog-excerpt">Practical tips to maximize your Ramadan experience and draw closer to Allah during this blessed month...</p>
+                        <a href="ramadan-preparation.html" class="btn btn-blog">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+    
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="quarn.jpg" alt="Zakat Guide" loading="lazy">
+                        <div class="blog-date">
+                            <span class="day">02</span>
+                            <span class="month">Apr</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Dr. Aisha Khan</span>
+                            <span><i class="fas fa-tag"></i> Zakat</span>
+                        </div>
+                        <h3 class="blog-title">Complete Guide to Calculating Your Zakat</h3>
+                        <p class="blog-excerpt">Learn how to properly calculate your Zakat with our comprehensive guide, including modern financial considerations...</p>
+                        <a href="quarn.jpg" class="btn btn-blog">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+    
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="financial.webp" alt="Islamic Parenting" loading="lazy">
+                        <div class="blog-date">
+                            <span class="day">20</span>
+                            <span class="month">Apr</span>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Umm Khalid</span>
+                            <span><i class="fas fa-tag"></i> Family</span>
+                        </div>
+                        <h3 class="blog-title">Islamic Parenting in the Digital Age</h3>
+                        <p class="blog-excerpt">Balancing technology use while raising righteous Muslim children according to Quran and Sunnah principles...</p>
+                        <a href="islamic-parenting.html" class="btn btn-blog">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="blog-archive.html" class="btn btn-primary">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+
+
+   <!-- Footer -->
+   <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>DUFATANYE Markaz</h3>
+                <p>A center for worship, education, and community service.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#prayer-times">Prayer Times</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DUFATANYE MARKAZ. All Rights Reserved.KATE</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
